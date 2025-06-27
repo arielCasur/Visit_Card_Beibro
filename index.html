@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de visite professionnelle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Card -->
+    <div class="card-container" onclick="flipCard()" title="Cliquez pour retourner">
+        <div class="card-inner" id="cardInner">
+            <!-- Front Side -->
+            <div class="card-face card-front" id="cardFront">
+                <div class="company-header">
+                    <div class="company-logo">      
+                        <img id="logo" src="img/casur-removebg-preview.png" alt="logo organisation">
+                    </div>
+                </div>
+                <div class="person-info">
+                    <h1 id="personName">Armand Beibro</h1>
+                    <p id="personTitle">Responsable Socio-Environnementaliste & Gérant</p>
+                    <div class="front-contacts">
+                        <a href="tel:+2250564146471" class="front-phone">
+                            <i class="fas fa-phone"></i>
+                            <span> +225 0748235892</span>
+                        </a>
+                        <br>
+                        <a href="mailto:m.kone@casur-consulting.com" class="front-mail">
+                            <i class="fas fa-envelope"></i>
+                            <span> k.beibro@casur-consulting.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Side -->
+            <div class="card-face card-back">
+                <p class="tagline" id="tagline">
+                    <img id="logo" src="img/casur-removebg-preview.png" alt="logo organisation">
+                "</p>
+                
+                <div class="content-section">
+                    <div class="contact-info">
+                        <a href="#" class="info-item">
+                            <span> 06 BP 2147 Abidjan 06 </span>
+                        </a> 
+                        <a href="https://www.google.com/maps/place/Casurconsulting/@5.3304891,-3.891813,17z/data=!3m1!4b1!4m6!3m5!1s0xfc1f3ea5511619f:0x157fcf9d62a40b9c!8m2!3d5.3304838!4d-3.8892381!16s%2Fg%2F11vlg1x76z?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span> Bingerville Cité Les Lauriers 20, Abidjan</span>
+                        </a> 
+
+                        <a href="mailto:projet@casur-consulting.com" class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span> projet@casur-consulting.com</span>
+                        </a>
+
+                        <a href="tel:+2250104806272" class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span> (+225) 01 04 80 62 72 / 27 22 21 93 15 </span>
+                        </a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="controls-header">
+            <h2 class="controls-title">
+                <i class="fas fa-palette"></i>
+                Personnaliser
+            </h2>
+            <button class="flip-button" id="flipButton" onclick="flipCard()">
+                <i class="fas fa-sync-alt"></i>
+                <span id="flipButtonText">Voir le Verso</span>
+            </button>
+        </div>
+
+        <div class="theme-buttons">
+            <button class="theme-button theme-green1 active" onclick="setTheme('green1')" title="Thème green1"></button>
+            <button class="theme-button theme-green2" onclick="setTheme('green2')" title="Thème green2"></button>
+            <button class="theme-button theme-green3" onclick="setTheme('green3')" title="Thème green3"></button>
+        </div>
+    </div>
+
+    <!-- Aperçu des données -->
+    <div class="data-preview">
+        <h3>
+            <i class="fas fa-user"></i>
+            Données Actuelles
+        </h3>
+        <p><strong>Nom:</strong> <span id="previewName">Armand Beibro</span></p>
+        <p><strong>Titre:</strong> <span id="previewTitle">Responsable Socio-Environnementaliste & Gérant</span></p>
+        <p><strong>Entreprise:</strong> <span id="previewCompany">Casur Consulting</span></p>
+        <p class="note"> &copy Casur Consulting 2025</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

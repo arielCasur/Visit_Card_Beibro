@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+/* Business Card Container */
+.card-container {
+    width: 384px;
+    height: 224px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 0.75rem;
+}
+
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    backface-visibility: hidden;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front {
+    background-color: white;
+}
+
+.front-contacts{
+    margin-top: 5px;
+}
+
+.card-back {
+    background-color: #0d9488;
+    transform: rotateY(180deg);
+}
+
+/* Theme colors */
+.theme-green1 { color: #46e588; }
+.theme-green2 { color: #0d9488; }
+.theme-green3 { color: #b9bb65; }
+
+/* Thème appliqué à la face avant de la carte */
+#cardFront.theme-green1 {
+    background-color: #e6f9f0;
+}
+#cardFront.theme-green2 {
+    background-color: #e0f7f6;
+}
+#cardFront.theme-green3 {
+    background-color: #f4f4dc;
+}
+
+/* Thème appliqué au bouton "flip" */
+#flipButton.theme-green1 {
+    background-color: #e6f9f0;
+}
+#flipButton.theme-green2 {
+    background-color: #e0f7f6;
+}
+#flipButton.theme-green3 {
+    background-color: #f4f4dc;
+}
+
+.theme-button.theme-green1 { background-color: #46e588; }
+.theme-button.theme-green2 { background-color: #0d9488; }
+.theme-button.theme-green3 { background-color: #b9bb65; }
+
+
+/* Front side */
+.company-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.company-logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+#logo {
+    width: 25vw;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+.person-info h1 {
+    font-size: 1.875rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 0.25rem;
+}
+
+.person-info p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Back side */
+.tagline {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.info-item span {
+    margin-left: 2px;
+}
+
+.info-item:hover {
+    color: #111827;
+}
+
+.info-item span {
+    font-weight: 500;
+    word-break: break-all;
+}
+
+
+/* Controls */
+.controls {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    width: 384px;
+}
+
+.controls-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.controls-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flip-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.flip-button:hover {
+    opacity: 0.9;
+}
+
+.theme-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.theme-button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.theme-button:hover {
+    transform: scale(1.1);
+}
+
+.theme-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px currentColor;
+}
+
+.theme-button.active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Data Preview */
+.data-preview {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    width: 384px;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.data-preview h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.data-preview p {
+    margin-bottom: 0.25rem;
+}
+
+.data-preview .note {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* Theme-specific colors for icons */
+.text-green1 { color: #46e588; }
+.text-green2 { color: #0d9488; }
+.text-green3 { color: #b9bb65; }
